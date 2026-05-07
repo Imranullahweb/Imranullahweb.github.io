@@ -164,9 +164,10 @@ function initForm() {
     form?.addEventListener("submit", (event) => {
         event.preventDefault();
         const data = new FormData(form);
-        const name = String(data.get("name") || "").trim();
-        const email = String(data.get("email") || "").trim();
-        const message = String(data.get("message") || "").trim();
+        const getField = (field) => String(data.get(field) || "").trim();
+        const name = getField("name");
+        const email = getField("email");
+        const message = getField("message");
 
         if (!name || !email || !message) {
             formStatus.textContent = "Please fill in all fields.";
