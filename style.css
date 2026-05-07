@@ -208,20 +208,20 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    border: 1px solid color-mix(in oklab, var(--accent), transparent 65%);
+    border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--surface));
     opacity: .65;
 }
 .project-card::after {
     --project-glow-spread: 30%;
     --project-glow-drop: 45%;
-    --project-glow-core: 78%;
+    --project-glow-alpha: 22%;
     --project-glow-fade: 62%;
     content: "";
     position: absolute;
     inset: auto calc(var(--project-glow-spread) * -1) calc(var(--project-glow-drop) * -1) calc(var(--project-glow-spread) * -1);
     height: 65%;
     border-radius: 999px;
-    background: radial-gradient(circle, color-mix(in oklab, var(--primary), transparent var(--project-glow-core)), transparent var(--project-glow-fade));
+    background: radial-gradient(circle, color-mix(in oklab, var(--primary) var(--project-glow-alpha), transparent) 0%, transparent var(--project-glow-fade));
     pointer-events: none;
 }
 .project-card:hover {
@@ -265,7 +265,7 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
     border-radius: 999px;
     font-size: .8rem;
     font-weight: 600;
-    border: 1px solid color-mix(in oklab, var(--primary), var(--border) 58%);
+    border: 1px solid color-mix(in oklab, var(--primary) 42%, var(--border));
     color: color-mix(in oklab, var(--primary-strong), var(--text) 30%);
     background: linear-gradient(140deg, color-mix(in oklab, var(--surface-2), var(--primary) 8%), var(--surface));
 }
