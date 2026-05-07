@@ -193,6 +193,35 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
 .card h3 { margin-top: 0; margin-bottom: .6rem; }
 .card ul { margin: .4rem 0 0; padding-left: 1rem; color: var(--muted); }
 
+.skills-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.skill-card {
+    padding: 1.2rem;
+    border-color: color-mix(in oklab, var(--primary), var(--border) 78%);
+    background: linear-gradient(165deg, color-mix(in oklab, var(--primary), transparent 95%), transparent 46%), var(--surface);
+}
+.skill-card h3 {
+    margin-bottom: .8rem;
+    font-size: 1.02rem;
+}
+.skill-chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .52rem;
+    margin: 0;
+    padding: 0;
+}
+.skill-chips li {
+    padding: .33rem .66rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, var(--primary), var(--border) 72%);
+    background: color-mix(in oklab, var(--surface-2), transparent 8%);
+    color: var(--text);
+    font-size: .84rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
 .project-cover,
 .art-cover {
     width: 100%;
@@ -210,21 +239,45 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
     gap: .45rem;
     margin-top: .7rem;
 }
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    min-height: 100%;
+    border-color: color-mix(in oklab, var(--primary), var(--border) 76%);
+    background: linear-gradient(168deg, color-mix(in oklab, var(--primary), transparent 94%), transparent 44%), var(--surface);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.project-card h3 { margin-bottom: .45rem; }
+.project-card p { margin: .1rem 0 0; color: var(--muted); }
+.project-card .project-links { margin-top: auto; padding-top: .35rem; }
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--primary), var(--border) 58%);
+    box-shadow: 0 20px 48px color-mix(in oklab, var(--primary), transparent 82%), var(--shadow);
+}
 .tag {
-    padding: .22rem .55rem;
+    padding: .3rem .62rem;
     border-radius: 999px;
     font-size: .82rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    background: color-mix(in oklab, var(--surface-2), transparent 20%);
+    border: 1px solid color-mix(in oklab, var(--primary), var(--border) 66%);
+    color: color-mix(in oklab, var(--text), var(--muted) 45%);
+    font-weight: 600;
+    background: color-mix(in oklab, var(--primary), transparent 90%);
 }
 .project-links a,
 .project-links span {
     font-size: .9rem;
     border-radius: 8px;
     border: 1px solid var(--border);
-    padding: .3rem .55rem;
+    padding: .38rem .64rem;
     background: var(--surface-2);
+}
+.project-links a:hover,
+.project-links a:focus-visible {
+    border-color: color-mix(in oklab, var(--primary), var(--border) 56%);
+    background: color-mix(in oklab, var(--primary), transparent 90%);
 }
 .project-links span { opacity: .75; }
 
@@ -281,6 +334,15 @@ textarea {
     .site-nav.open { display: flex; }
     .theme-toggle { margin-left: 0; }
     .hero-grid { grid-template-columns: 1fr; }
+    .cards-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+}
+
+@media (max-width: 640px) {
+    .card { padding: 1rem; }
+    .project-card { gap: .1rem; }
+    .project-links a,
+    .project-links span,
+    .tag { font-size: .8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
