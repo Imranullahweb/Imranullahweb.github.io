@@ -193,6 +193,52 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
 .card h3 { margin-top: 0; margin-bottom: .6rem; }
 .card ul { margin: .4rem 0 0; padding-left: 1rem; color: var(--muted); }
 
+.project-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    border: 1px solid color-mix(in oklab, var(--accent), transparent 65%);
+    opacity: .65;
+}
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -30% -45% -30%;
+    height: 65%;
+    border-radius: 999px;
+    background: radial-gradient(circle, color-mix(in oklab, var(--primary), transparent 78%), transparent 62%);
+    pointer-events: none;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 55px color-mix(in oklab, var(--primary), transparent 82%);
+    border-color: color-mix(in oklab, var(--primary), var(--border) 35%);
+}
+.project-card:focus-within {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent), white 35%), var(--shadow);
+    border-color: color-mix(in oklab, var(--accent), var(--border) 25%);
+}
+.project-card h3,
+.project-card p,
+.project-card .project-links,
+.project-card .tags,
+.project-card .project-cover {
+    position: relative;
+    z-index: 1;
+}
+.project-card p { margin: 0; color: var(--muted); }
+
 .project-cover,
 .art-cover {
     width: 100%;
@@ -211,22 +257,69 @@ h2 { font-size: clamp(1.7rem, 3.1vw, 2.4rem); margin: 0; }
     margin-top: .7rem;
 }
 .tag {
-    padding: .22rem .55rem;
+    padding: .3rem .62rem;
     border-radius: 999px;
-    font-size: .82rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    background: color-mix(in oklab, var(--surface-2), transparent 20%);
+    font-size: .8rem;
+    font-weight: 600;
+    border: 1px solid color-mix(in oklab, var(--primary), var(--border) 58%);
+    color: color-mix(in oklab, var(--primary-strong), var(--text) 30%);
+    background: linear-gradient(140deg, color-mix(in oklab, var(--surface-2), var(--primary) 8%), var(--surface));
 }
 .project-links a,
 .project-links span {
-    font-size: .9rem;
+    font-size: .88rem;
     border-radius: 8px;
     border: 1px solid var(--border);
-    padding: .3rem .55rem;
+    padding: .34rem .62rem;
     background: var(--surface-2);
+    font-weight: 600;
+}
+.project-links a {
+    transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.project-links a:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in oklab, var(--primary), var(--border) 40%);
+    background: color-mix(in oklab, var(--surface-2), var(--primary) 14%);
+}
+.project-links a:focus-visible {
+    border-color: color-mix(in oklab, var(--accent), var(--border) 40%);
 }
 .project-links span { opacity: .75; }
+
+.skill-card {
+    display: grid;
+    gap: .8rem;
+    align-content: start;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.skill-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--accent), var(--border) 45%);
+    box-shadow: 0 18px 45px color-mix(in oklab, var(--accent), transparent 86%);
+}
+.skill-card:focus-within {
+    border-color: color-mix(in oklab, var(--accent), var(--border) 30%);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent), white 36%), var(--shadow);
+}
+.skill-card h3 { margin-bottom: 0; }
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.skill-list li {
+    padding: .34rem .62rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in oklab, var(--accent), var(--border) 66%);
+    background: linear-gradient(160deg, color-mix(in oklab, var(--surface-2), var(--accent) 8%), var(--surface));
+    color: color-mix(in oklab, var(--text), var(--primary) 20%);
+    font-size: .86rem;
+    font-weight: 600;
+}
 
 .contact-wrap { display: grid; gap: 1.2rem; }
 .contact-form {
@@ -281,6 +374,12 @@ textarea {
     .site-nav.open { display: flex; }
     .theme-toggle { margin-left: 0; }
     .hero-grid { grid-template-columns: 1fr; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .project-card { gap: .6rem; }
+    .project-links { gap: .4rem; }
+    .project-links a,
+    .project-links span { flex: 1 1 auto; text-align: center; }
+    .skills-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

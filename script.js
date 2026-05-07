@@ -75,7 +75,7 @@ function renderProjects() {
     if (!grid) return;
 
     grid.innerHTML = projectData.map((project) => `
-        <article class="card reveal">
+        <article class="card project-card reveal">
             <img class="project-cover" src="${project.image}" alt="${project.title} preview" loading="lazy" decoding="async" width="640" height="400">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
