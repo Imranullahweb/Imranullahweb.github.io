@@ -3,175 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran Portfolio</title>
+    <title>Imran Ullah | Web Developer & 3D Artist</title>
+    <meta name="description" content="Imran Ullah is a Web Developer and 3D Artist creating fast, accessible digital experiences and immersive visuals.">
+    <meta property="og:title" content="Imran Ullah | Web Developer & 3D Artist">
+    <meta property="og:description" content="Portfolio of Imran Ullah featuring modern web projects, 3D artwork, and services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="dp.png">
+    <meta property="og:url" content="https://imranullahweb.github.io/Imranullahweb.github.io/">
     <link rel="icon" href="dp.png" type="image/png">
+    <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <!-- Placeholder image using UI Avatars service -->
-            <img src="dp.png" alt="Imran" class="logo-img">
-            <span class="logo-text">Imran.</span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+        <div class="container header-content">
+            <a href="#home" class="brand" aria-label="Go to home">
+                <img src="dp.png" alt="Portrait of Imran Ullah" class="brand-avatar" width="44" height="44">
+                <span>Imran Ullah</span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+                <i class="bx bx-menu"></i>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#artwork" class="nav-link">3D Work</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="theme-toggle" id="theme-toggle" aria-label="Switch color theme" aria-pressed="false">
+                <i class="bx bx-moon"></i>
+            </button>
         </div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
-
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li style="--i:1;"><a href="#home">Home</a></li>
-                <li style="--i:2;"><a href="#about">About</a></li>
-                <li style="--i:3;"><a href="#projects">Projects</a></li>
-                <li style="--i:4;"><a href="#services">Services</a></li>
-                <li style="--i:5;"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <div class="badge-container" style="--i:6">
-                <span class="badge">Available for Project</span>
+    <main id="main-content">
+        <section class="hero section" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Web Developer & 3D Artist</p>
+                    <h1>I build high-impact websites and visuals that people remember.</h1>
+                    <p class="lead">I help founders, businesses, and teams ship polished digital experiences that are fast, accessible, and conversion-ready.</p>
+                    <div class="cta-group">
+                        <a class="btn btn-primary" href="#projects">View Projects</a>
+                        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+                    </div>
+                    <ul class="social-list" aria-label="Social links">
+                        <li><a href="https://github.com/Imranullahweb" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/imran-webtech-904082298/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a></li>
+                        <li><a href="https://x.com/imran_ullah2" target="_blank" rel="noopener" aria-label="X"><i class="bx bxl-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="hero-media reveal">
+                    <img src="dp.png" alt="Imran Ullah profile" width="560" height="560" loading="eager" decoding="async">
+                </div>
             </div>
-            <h1 style="--i:7">Crafting Digital <br> Experiences</h1>
-            <h3 style="--i:8">Front End <span>Web Developer</span></h3>
-            <p style="--i:9">I specialize in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
-            
-            <div class="social-icons" style="--i:10">
-                <a href="https://github.com/Imranullahweb"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/imran-webtech-904082298/"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://x.com/imran_ullah2"><i class='bx bxl-twitter'></i></a> 
-            </div>
+        </section>
 
-            <a href="#projects" class="btn" style="--i:11">View Work</a>
+        <section class="about section" id="about">
+            <div class="container narrow reveal">
+                <h2>About Me</h2>
+                <p>I am Imran Ullah, a creative web developer and 3D artist focused on blending design and performance. I craft responsive interfaces, optimize user journeys, and build experiences that feel premium on every device.</p>
+                <div class="about-highlights" role="list">
+                    <div class="highlight" role="listitem"><strong>Performance-first</strong><span>Fast loading, SEO-ready pages</span></div>
+                    <div class="highlight" role="listitem"><strong>User-centered</strong><span>Clean UI and accessible interactions</span></div>
+                    <div class="highlight" role="listitem"><strong>Creative execution</strong><span>3D visuals and modern branding</span></div>
+                </div>
+                <a class="btn btn-secondary" href="Imran CV for scholarship.pdf" download target="_blank" rel="noopener">Download CV</a>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Skills</h2>
+                    <p>Tools and technologies I use to deliver reliable outcomes.</p>
+                </div>
+                <div class="skills-grid">
+                    <article class="card reveal">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3 / Modern CSS</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <h3>3D & Design</h3>
+                        <ul>
+                            <li>3D Product/Scene Concepts</li>
+                            <li>UI/UX Design Thinking</li>
+                            <li>Brand-focused Visuals</li>
+                            <li>Creative Prototyping</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Figma</li>
+                            <li>Performance & SEO Audits</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Featured Projects</h2>
+                    <p>Selected work that demonstrates design quality and engineering execution.</p>
+                </div>
+                <div class="cards-grid" id="projects-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="artwork section" id="artwork">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>3D / Artwork</h2>
+                    <p>A glimpse of creative direction and visual storytelling.</p>
+                </div>
+                <div class="cards-grid artwork-grid" id="artwork-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>What I can do for you</h2>
+                </div>
+                <div class="services-grid">
+                    <article class="card reveal">
+                        <h3>Landing Pages That Convert</h3>
+                        <p>High-converting, mobile-first pages optimized for speed and user trust.</p>
+                    </article>
+                    <article class="card reveal">
+                        <h3>Portfolio & Business Sites</h3>
+                        <p>Premium personal and business websites with clean, scalable structures.</p>
+                    </article>
+                    <article class="card reveal">
+                        <h3>3D-Enhanced Branding</h3>
+                        <p>Creative visuals to make your product and brand stand out instantly.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <div class="container contact-wrap">
+                <div class="section-head reveal">
+                    <h2>Let’s build something exceptional</h2>
+                    <p>Email: <a href="mailto:imranwebtech1@gmail.com">imranwebtech1@gmail.com</a></p>
+                </div>
+
+                <form class="contact-form reveal" id="contact-form" aria-label="Contact form">
+                    <div class="input-grid">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="name" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" autocomplete="email" required>
+                        </label>
+                    </div>
+                    <label>
+                        <span>Message</span>
+                        <textarea name="message" rows="6" required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Imran Ullah. All rights reserved.</p>
+            <a href="#home" class="back-top" aria-label="Back to top">Back to top ↑</a>
         </div>
-
-        <div class="home-img">
-            <div class="glowing-circle">
-                <span></span>
-                <span></span>
-                <div class="image">
-                    <img src="dp.png" alt="Imran">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-     
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Passionate about building the future of the web.</h3>
-            <p>With a deep understanding of modern web technologies, I bridge the gap between complex backend logic and intuitive frontend interfaces. My approach is rooted in performance, accessibility, and aesthetic precision.</p>
-
-            <div class="skills-container">
-                <div class="skill-card">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Development</h3>
-                    <p>HTML5, CSS3, JavaScript (ES6+), PHP</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class='bx bx-palette'></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Responsive Design, Wireframing, Prototyping</p>
-                </div>
-
-                <div class="skill-card">
-                    <i class='bx bx-rocket'></i>
-                    <h3>Optimization</h3>
-                    <p>Core Web Vitals, SEO, Performance Tuning</p>
-                </div>
-            </div>
-            <br>
-        </div>
-           <div class="cv-download">
-                    <a class="btn btn-cv btn-scholar" href="Imran CV for scholorhip.pdf" download target="_blank" rel="noopener">Download CV — Scholarship</a>
-                    <a class="btn btn-cv btn-job" href="#" id="job-cv-btn" aria-disabled="true">Download CV — Job</a>
-            </div>
-
-            <div id="cv-toast" class="cv-toast" role="status" aria-live="polite">
-                    Job CV is under construction. If you'd like to be notified, email
-                    <a href="mailto:imranwebtech1@gmail.com" id="cv-notify-email">imranwebtech1@gmail.com</a>.
-            </div>
-    </section>
-
-    <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="GCms pro.png" alt="Project 1">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>A modern and responsive website design focusing on user experience and aesthetic appeal.</p>
-                    <a href="gcmsmardan.edu.pk"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="ai agent.png" alt="Project 2">
-                <div class="portfolio-layer">
-                    <h4>AI Agent </h4>
-                    <p>A full-featured Study AI Agent| By Imran Ullah</p>
-                    <a href="https://imranstudyai.streamlit.app/"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="download.jpg" alt="Project 3">
-                <div class="portfolio-layer">
-                    <h4>React.JS  Project</h4>
-                    <p>Hotel Management Website in React + Vite js</p>
-                    <a href="https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-        </div>
-        <br>
-                <a href="https://github.com/Imranullahweb/" class="btn" style="--i:11">More Projects</a>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Web Development</h3>
-                <p>Building high-performance, responsive websites using the latest technologies.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class='bx bx-palette'></i>
-                <h3>UI/UX Design</h3>
-                <p>Creating intuitive and visually appealing interfaces for seamless user experiences.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class='bx bxl-android'></i>
-                <h3>App Development</h3>
-                <p>Developing robust and scalable mobile applications tailored to your business needs.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form name="submit-to-google-sheet">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-            </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-    </section>
-
-    <script src="script.js"></script>
+    </footer>
 </body>
 </html>
