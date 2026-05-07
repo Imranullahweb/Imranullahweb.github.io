@@ -164,10 +164,10 @@ function initForm() {
     form?.addEventListener("submit", (event) => {
         event.preventDefault();
         const data = new FormData(form);
-        const getField = (field) => String(data.get(field) || "").trim();
-        const name = getField("name");
-        const email = getField("email");
-        const message = getField("message");
+        const extractFields = (fields) => Object.fromEntries(
+            fields.map((field) => [field, String(data.get(field) || "").trim()])
+        );
+        const { name, email, message } = extractFields(["name", "email", "message"]);
 
         if (!name || !email || !message) {
             formStatus.textContent = "Please fill in all fields.";
