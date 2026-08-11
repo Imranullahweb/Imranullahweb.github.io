@@ -29,29 +29,10 @@ const projectData = [
         title: "Hotel Management Demo",
         description: "React + Vite demo for booking and management workflows with clean components.",
         tags: ["React", "Vite", "Frontend"],
-        image: "download.jpg",
+        image: "download.png",
         demo: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react",
         github: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react"
     }
-];
-
-const artworkData = [
-    {
-        title: "Portrait Composition",
-        image: "dp.png",
-        caption: "Character-focused composition for personal brand visual style."
-    },
-    {
-        title: "AI Visual Concept",
-        image: "ai agent.png",
-        caption: "Experimental visual direction for product storytelling."
-    },
-    {
-        title: "Project Showcase Still",
-        image: "download.jpg",
-        caption: "Mockup style visual for product presentation."
-    }
-    // TODO: Replace/add dedicated 3D render assets when final files are ready.
 ];
 
 function applyTheme(theme) {
@@ -88,20 +69,6 @@ function renderProjects() {
     `).join("");
 }
 
-function renderArtwork() {
-    const grid = document.getElementById("artwork-grid");
-    if (!grid) return;
-
-    grid.innerHTML = artworkData.map((piece) => `
-        <figure class="card reveal">
-            <img class="art-cover" src="${piece.image}" alt="${piece.title}" loading="lazy" decoding="async" width="640" height="400">
-            <figcaption>
-                <strong>${piece.title}</strong>
-                <p>${piece.caption}</p>
-            </figcaption>
-        </figure>
-    `).join("");
-}
 
 function setupReveal() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -298,7 +265,6 @@ function triggerAzadiCelebration() {
 yearNode.textContent = String(new Date().getFullYear());
 initTheme();
 renderProjects();
-renderArtwork();
 setupReveal();
 setupActiveNav();
 initHeaderBehavior();
