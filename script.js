@@ -35,6 +35,33 @@ const projectData = [
     }
 ];
 
+const clientData = [
+    {
+        name: "GCMS Mardan",
+        category: "Education & Govt",
+        description: "Official institutional website portal redesign with responsive UX & course highlights.",
+        icon: "bx bxs-school"
+    },
+    {
+        name: "Imran Study AI",
+        category: "AI & EdTech",
+        description: "Interactive AI study assistant web application built for seamless student workflows.",
+        icon: "bx bx-bot"
+    },
+    {
+        name: "Madina Colony Portal",
+        category: "Community Systems",
+        description: "Custom admin system, member logs, and notices web management system.",
+        icon: "bx bxs-building-house"
+    },
+    {
+        name: "Hotel Management SaaS",
+        category: "Hospitality & Web Apps",
+        description: "React-powered room reservation system and real-time management dashboard.",
+        icon: "bx bxs-hotel"
+    }
+];
+
 function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -69,6 +96,23 @@ function renderProjects() {
     `).join("");
 }
 
+function renderClients() {
+    const grid = document.getElementById("clients-grid");
+    if (!grid) return;
+
+    grid.innerHTML = clientData.map((client) => `
+        <article class="card client-card reveal">
+            <div class="client-icon-wrap">
+                <i class="${client.icon}"></i>
+            </div>
+            <div class="client-info">
+                <span class="client-category">${client.category}</span>
+                <h3>${client.name}</h3>
+                <p>${client.description}</p>
+            </div>
+        </article>
+    `).join("");
+}
 
 function setupReveal() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -265,6 +309,7 @@ function triggerAzadiCelebration() {
 yearNode.textContent = String(new Date().getFullYear());
 initTheme();
 renderProjects();
+renderClients();
 setupReveal();
 setupActiveNav();
 initHeaderBehavior();

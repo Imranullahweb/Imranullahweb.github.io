@@ -396,8 +396,61 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin: 0; font-weight: 800; color
 .highlight span { display: block; color: var(--muted); margin-top: .35rem; font-size: .92rem; }
 
 .skills-grid,
-.services-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.services-grid,
+.clients-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 .cards-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+.client-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.3rem;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.client-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 16px 36px rgba(0, 104, 39, 0.15);
+}
+
+.client-icon-wrap {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.client-category {
+    display: inline-block;
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--primary);
+    margin-bottom: .2rem;
+}
+
+.client-info h3 {
+    margin: 0 0 .3rem 0;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.client-info p {
+    margin: 0;
+    font-size: .92rem;
+    color: var(--muted);
+}
 .card {
     background: var(--surface);
     border: 1.5px solid var(--border);
