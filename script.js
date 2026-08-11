@@ -32,10 +32,58 @@ const projectData = [
         image: "download.png",
         demo: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react",
         github: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react"
+    },
+    {
+        title: "KTK Education Consultant",
+        description: "International education & study abroad consultancy platform with destination guides and visa support.",
+        tags: ["Admissions", "Visa Support", "IELTS/PTE"],
+        image: "ktk_consultant.jpg",
+        demo: "https://ktkconsultant.com",
+        github: "https://github.com/Imranullahweb"
+    },
+    {
+        title: "MentorMinds Academy",
+        description: "Education consultancy & English language academy platform for study abroad pathways.",
+        tags: ["Study Abroad", "IELTS", "Visa Guidance"],
+        image: "mentorminds.jpg",
+        demo: "https://mentormindpathways.com",
+        github: "https://github.com/Imranullahweb"
+    },
+    {
+        title: "Nangyal Global Mart",
+        description: "E-Commerce store & custom product platform for personalized gifts, apparel, and merchandise.",
+        tags: ["E-Commerce", "Custom Orders", "Online Store"],
+        image: "nangyal_mart.jpg",
+        demo: "https://nangyalglobalmart.com",
+        github: "https://github.com/Imranullahweb"
     }
 ];
 
 const clientData = [
+    {
+        name: "KTK Education Consultant",
+        category: "International Education",
+        description: "Expert guidance for admissions, visas, and study abroad success across top global destinations.",
+        image: "ktk_consultant.jpg",
+        tags: ["Admissions", "Visa Support", "IELTS"],
+        link: "https://ktkconsultant.com"
+    },
+    {
+        name: "MentorMinds Academy",
+        category: "EdTech & Academy",
+        description: "Education consultancy and English academy platform for global study pathways.",
+        image: "mentorminds.jpg",
+        tags: ["Study Abroad", "IELTS", "Visa Guidance"],
+        link: "https://mentormindpathways.com"
+    },
+    {
+        name: "Nangyal Global Mart",
+        category: "E-Commerce & Custom Gifts",
+        description: "Personalized gifts, customized mugs, t-shirts, caps, and e-commerce shopping experience.",
+        image: "nangyal_mart.jpg",
+        tags: ["E-Commerce", "Custom Orders", "Retail"],
+        link: "https://nangyalglobalmart.com"
+    },
     {
         name: "GCMS Mardan",
         category: "Education & Govt Portal",
@@ -43,30 +91,6 @@ const clientData = [
         image: "GCms pro.png",
         tags: ["Government", "Web Portal", "UI/UX"],
         link: "https://gcmsmardan.edu.pk"
-    },
-    {
-        name: "Imran Study AI",
-        category: "EdTech & AI SaaS",
-        description: "AI study assistant platform designed to streamline student workflows and learning.",
-        image: "ai agent.png",
-        tags: ["AI Agent", "Python", "Streamlit"],
-        link: "https://imranstudyai.streamlit.app/"
-    },
-    {
-        name: "Madina Colony Admin",
-        category: "Enterprise System",
-        description: "Full-stack PHP/MySQL portal for notice boards, resident logs, and admin analytics.",
-        image: "dp.png",
-        tags: ["PHP", "MySQL", "Admin Panel"],
-        link: ""
-    },
-    {
-        name: "Hotel Management SaaS",
-        category: "Hospitality & Web Apps",
-        description: "React-powered room reservation system and real-time management dashboard.",
-        image: "download.png",
-        tags: ["React", "Vite", "Dashboard"],
-        link: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react"
     }
 ];
 
