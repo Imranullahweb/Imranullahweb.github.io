@@ -182,6 +182,119 @@ function initForm() {
     });
 }
 
+function initAzadiCanvas() {
+    const canvas = document.getElementById("azadi-canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+
+    window.addEventListener("resize", () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+    });
+
+    const particles = Array.from({ length: 25 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 3 + 1.5,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: -Math.random() * 0.6 - 0.2,
+        color: Math.random() > 0.4 ? "#006827" : "#ffffff",
+        alpha: Math.random() * 0.6 + 0.2
+    }));
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach((p) => {
+            ctx.save();
+            ctx.globalAlpha = p.alpha;
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            p.x += p.dx;
+            p.y += p.dy;
+
+            if (p.y < 0) {
+                p.y = height;
+                p.x = Math.random() * width;
+            }
+            if (p.x < 0 || p.x > width) {
+                p.dx *= -1;
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+function triggerAzadiCelebration() {
+    const burstCount = 60;
+    const container = document.body;
+
+    for (let i = 0; i < burstCount; i++) {
+        const p = document.createElement("div");
+        const isGreen = Math.random() > 0.4;
+        const isStar = Math.random() > 0.5;
+
+        p.textContent = isStar ? "⭐" : "🌙";
+        p.style.cssText = `
+            position: fixed;
+            left: ${Math.random() * 100}vw;
+            top: -20px;
+            font-size: ${Math.random() * 1.5 + 1}rem;
+            color: ${isGreen ? "#00c853" : "#ffffff"};
+            z-index: 9999;
+            pointer-events: none;
+            transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1), opacity 3s ease;
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        `;
+        container.appendChild(p);
+
+        requestAnimationFrame(() => {
+            p.style.transform = `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`;
+            p.style.opacity = "0";
+        });
+
+        setTimeout(() => p.remove(), 3200);
+    }
+
+    const toast = document.createElement("div");
+    toast.textContent = "🇵🇰 Pakistan Zindabad! Happy 14th August!";
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: linear-gradient(135deg, #006827, #004d1c);
+        color: #ffffff;
+        padding: .8rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 104, 39, 0.4);
+        z-index: 10000;
+        transition: all .3s ease;
+        opacity: 0;
+    `;
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.style.transform = "translateX(-50%) translateY(0)";
+        toast.style.opacity = "1";
+    });
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(-50%) translateY(20px)";
+        setTimeout(() => toast.remove(), 400);
+    }, 3000);
+}
+
 yearNode.textContent = String(new Date().getFullYear());
 initTheme();
 renderProjects();
@@ -191,6 +304,10 @@ setupActiveNav();
 initHeaderBehavior();
 initMenu();
 initForm();
+initAzadiCanvas();
+
+document.getElementById("celebrate-btn")?.addEventListener("click", triggerAzadiCelebration);
+document.getElementById("hero-azadi-btn")?.addEventListener("click", triggerAzadiCelebration);
 
 themeToggle?.addEventListener("click", () => {
     const current = root.getAttribute("data-theme") === "dark" ? "light" : "dark";

@@ -11,6 +11,9 @@
     <meta property="og:image" content="dp.png">
     <meta property="og:url" content="https://imranullahweb.github.io/Imranullahweb.github.io/">
     <link rel="icon" href="dp.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -19,11 +22,18 @@
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
+    <div class="azadi-banner" id="azadi-banner">
+        <div class="container banner-inner">
+            <span>🇵🇰 <strong>Jashn-e-Azadi Mubarak!</strong> Celebrating 14th August Independence Day</span>
+            <button id="celebrate-btn" class="azadi-celebrate-btn">🎉 Celebrate Azadi!</button>
+        </div>
+    </div>
+
     <header class="site-header" id="site-header">
         <div class="container header-content">
             <a href="#home" class="brand" aria-label="Go to home">
                 <img src="dp.png" alt="Portrait of Imran Ullah" class="brand-avatar" width="44" height="44">
-                <span>Imran Ullah</span>
+                <span>Imran Ullah <span class="flag-badge">🇵🇰</span></span>
             </a>
 
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
@@ -47,9 +57,18 @@
 
     <main id="main-content">
         <section class="hero section" id="home">
+            <canvas id="azadi-canvas" class="azadi-canvas"></canvas>
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <p class="eyebrow">Web Developer & 3D Artist</p>
+                    <div class="badge-group">
+                        <button class="pak-badge" id="hero-azadi-btn" title="Click to celebrate Azadi!">
+                            <svg class="crescent-star-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                <path d="M12 2a10 10 0 1 0 10 10 8.5 8.5 0 0 1-10-10zm7.5 4.5l.9 1.8 2 .3-1.4 1.4.3 2-1.8-.9-1.8.9.3-2-1.4-1.4 2-.3.9-1.8z"/>
+                            </svg>
+                            14th August • Azadi Edition
+                        </button>
+                        <span class="eyebrow">Web Developer & 3D Artist</span>
+                    </div>
                     <h1>I build high-impact websites and visuals that people remember.</h1>
                     <p class="lead">I help founders, businesses, and teams ship polished digital experiences that are fast, accessible, and conversion-ready.</p>
                     <div class="cta-group">
@@ -72,6 +91,10 @@
             <div class="container narrow reveal">
                 <h2>About Me</h2>
                 <p>I am Imran Ullah, a creative web developer and 3D artist focused on blending design and performance. I craft responsive interfaces, optimize user journeys, and build experiences that feel premium on every device.</p>
+                <blockquote class="quaid-quote">
+                    <p>“With faith, unity, and discipline, we can achieve anything.”</p>
+                    <cite>— Quaid-e-Azam Muhammad Ali Jinnah</cite>
+                </blockquote>
                 <div class="about-highlights" role="list">
                     <div class="highlight" role="listitem"><strong>Performance-first</strong><span>Fast loading, SEO-ready pages</span></div>
                     <div class="highlight" role="listitem"><strong>User-centered</strong><span>Clean UI and accessible interactions</span></div>
