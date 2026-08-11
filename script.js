@@ -92,13 +92,20 @@ function renderProjects() {
 
     grid.innerHTML = projectData.map((project) => `
         <article class="card project-card reveal">
-            <img class="project-cover" src="${project.image}" alt="${project.title} preview" loading="lazy" decoding="async" width="640" height="400">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="tags">${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
-            <div class="project-links">
-                ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener">Live Demo</a>` : "<span>Demo pending</span>"}
-                ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener">GitHub</a>` : "<span>Code private</span>"}
+            <div class="project-media-wrap">
+                <img class="project-cover" src="${project.image}" alt="${project.title} preview" loading="lazy" decoding="async">
+                ${project.demo ? `
+                    <a href="${project.demo}" target="_blank" rel="noopener" class="project-url-badge">
+                        <i class="bx bx-lock-alt"></i> ${project.demo.replace(/^https?:\/\//, '')}
+                    </a>
+                ` : ''}
+            </div>
+            <div class="project-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="tags">
+                    ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+                </div>
             </div>
         </article>
     `).join("");
@@ -110,13 +117,20 @@ function renderClients() {
 
     grid.innerHTML = clientData.map((client) => `
         <article class="card project-card reveal">
-            <img class="project-cover" src="${client.image}" alt="${client.name} preview" loading="lazy" decoding="async" width="640" height="400">
-            <span class="tag" style="align-self: flex-start; margin-top: .4rem; background: var(--primary); color: #ffffff;">${client.category}</span>
-            <h3>${client.name}</h3>
-            <p>${client.description}</p>
-            <div class="tags">${client.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
-            <div class="project-links">
-                ${client.link ? `<a href="${client.link}" target="_blank" rel="noopener">Visit Project</a>` : "<span>Internal Portal</span>"}
+            <div class="project-media-wrap">
+                <img class="project-cover" src="${client.image}" alt="${client.name} preview" loading="lazy" decoding="async">
+                ${client.link ? `
+                    <a href="${client.link}" target="_blank" rel="noopener" class="project-url-badge">
+                        <i class="bx bx-lock-alt"></i> ${client.link.replace(/^https?:\/\//, '')}
+                    </a>
+                ` : ''}
+            </div>
+            <div class="project-content">
+                <h3>${client.name}</h3>
+                <p>${client.description}</p>
+                <div class="tags">
+                    ${client.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+                </div>
             </div>
         </article>
     `).join("");
