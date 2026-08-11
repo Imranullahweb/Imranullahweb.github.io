@@ -38,27 +38,35 @@ const projectData = [
 const clientData = [
     {
         name: "GCMS Mardan",
-        category: "Education & Govt",
-        description: "Official institutional website portal redesign with responsive UX & course highlights.",
-        icon: "bx bxs-school"
+        category: "Education & Govt Portal",
+        description: "Official institutional website redesign focused on responsive UX & course hierarchy.",
+        image: "GCms pro.png",
+        tags: ["Government", "Web Portal", "UI/UX"],
+        link: "https://gcmsmardan.edu.pk"
     },
     {
         name: "Imran Study AI",
-        category: "AI & EdTech",
-        description: "Interactive AI study assistant web application built for seamless student workflows.",
-        icon: "bx bx-bot"
+        category: "EdTech & AI SaaS",
+        description: "AI study assistant platform designed to streamline student workflows and learning.",
+        image: "ai agent.png",
+        tags: ["AI Agent", "Python", "Streamlit"],
+        link: "https://imranstudyai.streamlit.app/"
     },
     {
-        name: "Madina Colony Portal",
-        category: "Community Systems",
-        description: "Custom admin system, member logs, and notices web management system.",
-        icon: "bx bxs-building-house"
+        name: "Madina Colony Admin",
+        category: "Enterprise System",
+        description: "Full-stack PHP/MySQL portal for notice boards, resident logs, and admin analytics.",
+        image: "dp.png",
+        tags: ["PHP", "MySQL", "Admin Panel"],
+        link: ""
     },
     {
         name: "Hotel Management SaaS",
         category: "Hospitality & Web Apps",
         description: "React-powered room reservation system and real-time management dashboard.",
-        icon: "bx bxs-hotel"
+        image: "download.png",
+        tags: ["React", "Vite", "Dashboard"],
+        link: "https://github.com/Imranullahweb/Hotel-Managment-Demo-version-in-react"
     }
 ];
 
@@ -101,14 +109,14 @@ function renderClients() {
     if (!grid) return;
 
     grid.innerHTML = clientData.map((client) => `
-        <article class="card client-card reveal">
-            <div class="client-icon-wrap">
-                <i class="${client.icon}"></i>
-            </div>
-            <div class="client-info">
-                <span class="client-category">${client.category}</span>
-                <h3>${client.name}</h3>
-                <p>${client.description}</p>
+        <article class="card project-card reveal">
+            <img class="project-cover" src="${client.image}" alt="${client.name} preview" loading="lazy" decoding="async" width="640" height="400">
+            <span class="tag" style="align-self: flex-start; margin-top: .4rem; background: var(--primary); color: #ffffff;">${client.category}</span>
+            <h3>${client.name}</h3>
+            <p>${client.description}</p>
+            <div class="tags">${client.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
+            <div class="project-links">
+                ${client.link ? `<a href="${client.link}" target="_blank" rel="noopener">Visit Project</a>` : "<span>Internal Portal</span>"}
             </div>
         </article>
     `).join("");
