@@ -153,6 +153,29 @@ a { color: inherit; text-decoration: none; }
 }
 :root[data-theme="dark"] .brand { color: #ffffff; }
 
+.brand-name-wrap {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.brand-main {
+    font-weight: 800;
+    font-size: 1.22rem;
+    color: var(--primary-strong);
+    letter-spacing: -0.02em;
+}
+:root[data-theme="dark"] .brand-main { color: #ffffff; }
+
+.brand-subtext {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+}
+:root[data-theme="dark"] .brand-subtext { color: var(--accent); }
+
+
 .brand-avatar {
     width: 44px;
     height: 44px;
